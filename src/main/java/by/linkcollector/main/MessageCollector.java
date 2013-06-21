@@ -22,7 +22,8 @@ public class MessageCollector {
         PrintWriter out = new PrintWriter(new FileWriter(System.getProperty("user.home") + "/Desktop/skype_log.txt"), true);
 
         for (ChatMessage message : messageService.getTodayChatMessages()) {
-            Pattern pattern = Pattern.compile("^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]");
+            //System.out.println(message.getContent());
+            Pattern pattern = Pattern.compile("([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)");
             Matcher matcher = pattern.matcher(message.getContent());
             while (matcher.find()) {
                 out.append(matcher.group());
@@ -31,5 +32,8 @@ public class MessageCollector {
         }
 
         out.close();
+
+        System.out.println("complete...");
     }
 }
+
