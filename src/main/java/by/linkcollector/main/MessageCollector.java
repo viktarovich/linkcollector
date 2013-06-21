@@ -2,6 +2,7 @@ package by.linkcollector.main;
 
 import by.linkcollector.services.MessageService;
 import com.skype.ChatMessage;
+import com.skype.Skype;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -16,6 +17,9 @@ import java.util.regex.Pattern;
 public class MessageCollector {
 
     public static void main(String[] args) throws Exception {
+
+        Skype.setDebug(true);
+        Skype.setDaemon(false);
 
         MessageService messageService = new MessageService();
 
