@@ -1,12 +1,9 @@
-package by.linkcollector.main;
+package by.volfgang.linkcollector.app;
 
-import by.linkcollector.services.MessageService;
+import by.volfgang.linkcollector.services.MessageService;
 import com.skype.ChatMessage;
-import com.skype.Skype;
 
-import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,19 +11,15 @@ import java.util.regex.Pattern;
 /**
  * @author Eugene Viktorovich
  */
-public class MessageCollector {
+public class Collector {
 
     public static void main(String[] args) throws Exception {
-
-        Skype.setDebug(true);
-        Skype.setDaemon(false);
 
         MessageService messageService = new MessageService();
 
         PrintWriter out = new PrintWriter(new FileWriter(System.getProperty("user.home") + "/Desktop/skype_log.txt"), true);
 
         for (ChatMessage message : messageService.getTodayChatMessages()) {
-            //System.out.println(message.getContent());
             Pattern pattern = Pattern.compile("([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)");
             Matcher matcher = pattern.matcher(message.getContent());
             while (matcher.find()) {
@@ -36,8 +29,5 @@ public class MessageCollector {
         }
 
         out.close();
-
-        System.out.println("complete...");
     }
 }
-

@@ -1,4 +1,4 @@
-package by.linkcollector.services;
+package by.volfgang.linkcollector.services;
 
 public class MessageWriter {
     void write() {

@@ -1,4 +1,4 @@
-package by.linkcollector.services;
+package by.volfgang.linkcollector.services;
 
 import com.skype.Chat;
 import com.skype.ChatMessage;
@@ -10,6 +10,8 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
+ *
+ *
  * @author Eugene Viktorovich
  */
 public class MessageService {
@@ -26,7 +28,6 @@ public class MessageService {
     private Chat getDaffmanChat() throws Exception {
         Chat daffmanChat = null;
         for (Chat chat : Skype.getAllChats()) {
-//            System.out.println(chat.getWindowTitle());
             if (StringUtils.startsWith(chat.getWindowTitle(), WINDOW_TITLE)) {
                 System.out.println(chat.getWindowTitle());
                 daffmanChat = chat;
