@@ -29,7 +29,6 @@ public class MessageService {
         Chat daffmanChat = null;
         for (Chat chat : Skype.getAllChats()) {
             if (StringUtils.startsWith(chat.getWindowTitle(), WINDOW_TITLE)) {
-                System.out.println(chat.getWindowTitle());
                 daffmanChat = chat;
                 break;
             }
