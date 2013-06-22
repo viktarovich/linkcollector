@@ -32,7 +32,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>by.volfgang.linkcollector.app.Collector</mainClass>
+              <mainClass>com.github.eugeneviktorovich.app.Collector</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -45,6 +45,16 @@
       <groupId>com.github.taksan</groupId>
       <artifactId>skype-java-api</artifactId>
       <version>1.5</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
     </dependency>
   </dependencies>
 </project>

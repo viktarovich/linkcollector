@@ -1,4 +1,4 @@
-package by.volfgang.linkcollector.services;
+package com.github.eugeneviktorovich.services;
 
 import com.skype.Chat;
 import com.skype.ChatMessage;
