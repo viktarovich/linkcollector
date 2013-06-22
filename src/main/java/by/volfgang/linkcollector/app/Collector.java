@@ -13,7 +13,11 @@ import java.util.regex.Pattern;
  */
 public class Collector {
 
+    //private static volatile PrintWriter log = new PrintWriter(System.out, true);
+
     public static void main(String[] args) throws Exception {
+
+        //log.println("start app");
 
         MessageService messageService = new MessageService();
 
@@ -29,5 +33,7 @@ public class Collector {
         }
 
         out.close();
+
+        //log.println("complete ...");
     }
 }
