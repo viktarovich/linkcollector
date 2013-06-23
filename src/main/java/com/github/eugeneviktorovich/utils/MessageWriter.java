@@ -10,12 +10,18 @@ import java.util.List;
  */
 public class MessageWriter implements Writer {
 
+    private String appOutput;
+
+    public void setAppOutput(String appOutput) {
+        this.appOutput = appOutput;
+    }
+
     @Override
     public void write(List<String> messages) {
         PrintWriter out = null;
 
         try {
-            out = new PrintWriter(System.getProperty("user.home") + "/Desktop/skype_log.txt", "UTF-8");
+            out = new PrintWriter(appOutput, "UTF-8");
 
             for (String msg : messages) {
                 out.append(msg);

@@ -7,10 +7,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * @author Eugene Viktorovich
  */
-public class App {
+public class Main {
 
     public static void main(String[] args) throws Exception {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
 
         Collector test = (Collector) context.getBean("collector");
 
