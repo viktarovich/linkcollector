@@ -8,12 +8,14 @@
 
   <context:property-placeholder location="classpath*:app.properties"/>
 
-  <bean id="messageService" class="com.github.eugeneviktorovich.services.MessageService"/>
+  <bean id="messageService" class="com.github.eugeneviktorovich.services.MessageService">
+    <property name="windowTitle" value="${collector.windowTitle}"/>
+  </bean>
 
   <bean id="collectionService" class="com.github.eugeneviktorovich.services.CollectionService"/>
 
-  <bean id="writer" class="com.github.eugeneviktorovich.utils.MessageWriter">
-    <property name="appOutput" value="${app.output}"/>
+  <bean id="writer" class="com.github.eugeneviktorovich.io.FileWriter">
+    <property name="fileName" value="${collector.fileName}"/>
   </bean>
 
   <bean id="collector" class="com.github.eugeneviktorovich.utils.Collector">
