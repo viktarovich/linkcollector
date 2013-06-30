@@ -9,13 +9,12 @@
   <version>0.1-SNAPSHOT</version>
 
   <name>linkcollector</name>
-  <description><!--#TODO: description--></description>
+  <description>App collects the image links from Skype chat and outputs to a file.</description>
   <url>https://github.com/EugeneViktorovich/linkcollector</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.version>3.2.3.RELEASE</spring.version>
-    <targetJdk>1.7</targetJdk>
+    <jdkVersion>1.7</jdkVersion>
   </properties>
 
   <build>
@@ -26,6 +25,9 @@
         <includes>
           <include>*.xml</include>
         </includes>
+        <excludes>
+          <exclude>log4j.xml</exclude>
+        </excludes>
       </resource>
     </resources>
     <plugins>
@@ -34,8 +36,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>${targetJdk}</source>
-          <target>${targetJdk}</target>
+          <source>${jdkVersion}</source>
+          <target>${jdkVersion}</target>
         </configuration>
       </plugin>
       <plugin>
@@ -50,10 +52,34 @@
               <tasks>
                 <copy todir="target/conf" overwrite="true">
                   <fileset dir="src/main/resources/">
-                    <include name="*.properties"/>
+                    <include name="app*.properties"/>
+                    <include name="log4j.xml"/>
+                  </fileset>
+                </copy>
+                <copy todir="target" overwrite="true">
+                  <fileset dir="src/main/resources/">
+                    <include name="run.bat"/>
+                    <include name="run.sh"/>
                   </fileset>
                 </copy>
               </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attached</goal>
+            </goals>
+            <configuration>
+              <descriptors>
+                <descriptor>assembly.xml</descriptor>
+              </descriptors>
             </configuration>
           </execution>
         </executions>
@@ -97,12 +123,12 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
-      <version>${spring.version}</version>
+      <version>3.2.3.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>${spring.version}</version>
+      <version>3.2.3.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

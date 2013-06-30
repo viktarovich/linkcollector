@@ -1,0 +1,1 @@
+java -jar ./target/linkcollector-0.1-SNAPSHOT.jar
