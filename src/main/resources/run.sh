@@ -1,1 +1,1 @@
-java -jar linkcollector-0.1.jar
+java -jar linkcollector-0.2-SNAPSHOT.jar
