@@ -25,7 +25,7 @@ public class FileWriter implements Writer {
     }
 
     /**
-     * Write/save messages to file.
+     * Write/save messages to a file.
      *
      * @param messages
      */
