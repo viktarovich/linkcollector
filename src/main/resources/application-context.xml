@@ -12,14 +12,14 @@
     <property name="windowTitle" value="${collector.windowTitle}"/>
   </bean>
 
-  <bean id="collectionService" class="com.github.eugeneviktorovich.services.CollectionService"/>
+  <bean id="matcherService" class="com.github.eugeneviktorovich.services.MatcherService"/>
 
   <bean id="writer" class="com.github.eugeneviktorovich.io.FileWriter">
     <property name="fileName" value="${collector.fileName}"/>
   </bean>
 
   <bean id="collector" class="com.github.eugeneviktorovich.utils.Collector">
-    <property name="collectionService" ref="collectionService"/>
+    <property name="matcherService" ref="matcherService"/>
     <property name="messageService" ref="messageService"/>
     <property name="writer" ref="writer"/>
   </bean>
