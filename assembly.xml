@@ -21,6 +21,7 @@
         <include>run.sh</include>
         <include>conf/**</include>
         <include>lib/**</include>
+        <include>${project.artifactId}-${project.version}.exe</include>
         <include>${project.artifactId}-${project.version}.jar</include>
       </includes>
     </fileSet>

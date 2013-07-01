@@ -101,6 +101,47 @@
         </configuration>
       </plugin>
       <plugin>
+        <groupId>com.akathist.maven.plugins.launch4j</groupId>
+        <artifactId>launch4j-maven-plugin</artifactId>
+        <version>1.5.2</version>
+        <executions>
+          <execution>
+            <id>l4j-clui</id>
+            <phase>package</phase>
+            <goals>
+              <goal>launch4j</goal>
+            </goals>
+            <configuration>
+              <headerType>console</headerType>
+              <outfile>target/${project.artifactId}-${project.version}.exe</outfile>
+              <jar>target/${project.artifactId}-${project.version}.jar</jar>
+              <errTitle>${project.artifactId}</errTitle>
+              <icon>favicon.ico</icon>
+              <classPath>
+                <mainClass>com.github.eugeneviktorovich.app.Main</mainClass>
+                <addDependencies>true</addDependencies>
+                <preCp>anything</preCp>
+              </classPath>
+              <jre>
+                <minVersion>${jdkVersion}.0</minVersion>
+              </jre>
+              <versionInfo>
+                <fileVersion>0.0.0.0</fileVersion>
+                <txtFileVersion>${project.version}.0.0</txtFileVersion>
+                <fileDescription>${project.description}</fileDescription>
+                <copyright>Copyright © 2013 Eugene Viktorovich</copyright>
+                <productVersion>0.0.0.0</productVersion>
+                <txtProductVersion>${project.version}.0.0</txtProductVersion>
+                <companyName>Eugene Viktorovich</companyName>
+                <productName>${project.artifactId}</productName>
+                <internalName>${project.artifactId}</internalName>
+                <originalFilename>${project.artifactId}-${project.version}.exe</originalFilename>
+              </versionInfo>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
           <execution>
