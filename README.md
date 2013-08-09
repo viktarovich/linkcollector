@@ -6,7 +6,7 @@ Plugin collects links from Skype chat and outputs them in some file.
 Installation
 ------------
 
-Download plugin by [link](http://sourceforge.net/projects/linkcollector/?source=directory)
+Download plugin by [link](http://sourceforge.net/projects/skypelinkcollector/files/?source=navbar)
 and unzip the archive to any accessible directory.
 
 
