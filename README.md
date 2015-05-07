@@ -1,6 +1,8 @@
 Linkcollector
 =============
 
+[![Join the chat at https://gitter.im/EugeneViktorovich/linkcollector](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/EugeneViktorovich/linkcollector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Plugin collects links from Skype chat and outputs them in some file.
 
 Installation
