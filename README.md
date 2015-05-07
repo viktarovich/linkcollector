@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/eugeneviktorovich/linkcollector.png?label=ready&title=Ready)](https://waffle.io/eugeneviktorovich/linkcollector)
 Linkcollector
 =============
 
